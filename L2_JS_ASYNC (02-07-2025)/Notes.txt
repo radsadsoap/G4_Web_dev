@@ -1,0 +1,10 @@
+Asynchronous programming
+- callback
+- promises
+- Async & Await
+
+CALLBACK
+* pyramid of doom
+* disadvantage of callback
+    - inversion of control
+    - cannot debug easily
