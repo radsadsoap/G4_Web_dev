@@ -1,0 +1,80 @@
+2nd July 2025
+
+Asynchronous programming
+- callback
+- promises
+- Async & Await
+
+CALLBACK
+* pyramid of doom
+* disadvantage of callback
+    - inversion of control
+    - cannot debug easily
+
+|<-------------------------------------------->|
+
+4th July 2025
+
+PROMISES
+- they are always objects
+
+Behaviours
+- Promise.all
+- Promise.allSettled
+- Promise.any
+- Promise.race
+- Promise.resolve
+
+1. All resolved
+
+const p1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Promise 1 resolved");
+    }, 1000);
+});
+
+const p2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Promise 2 resolved");
+    }, 2000);
+});
+
+const p3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Promise 3 resolved");
+    }, 3000);
+});
+
+return -> [ 'Promise 1 resolved', 'Promise 2 resolved', 'Promise 3 resolved' ]
+
+2. One reject (e.g. p3)
+
+const p3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject("Promise 3 unresolved");
+    }, 3000);
+});
+
+return -> Error: Promise 3 unresolved
+
+3. All reject
+
+return -> Error: Promise 1 unresolved
+
+Note - if one promise fails, the catch block will be executed (in Promise.all ek fail hua toh return fail hoga)
+     - if all promises are resolved, then the then block will be executed (successfully promise resolved hoga)
+
+all - all api chal gayi to : ALL RESULT
+all reject - first rejected
+ek hogyi to uska he error ayega
+
+allSettled - array of object
+allSettled - array of reject
+ek do = array jo full fill or reject
+
+race == first winner
+reject == first reject
+
+any == any first which is resolved
+
+ASYNC - AWAIT
