@@ -120,10 +120,27 @@ async function checkAssignment() {
 checkAssignment();
 */
 
-async function fetchData() {
-    const data = await fetch("https://dummyjson.com/products");
-    const jsonData = await data.json();
-    console.log(jsonData);
+async function fetchProducts() {
+    try {
+        const res = await fetch("https://dummyjson.com/products");
+        const data = await res.json();
+
+        const template = document.getElementById("product-template");
+        const container = document.getElementById("products-container");
+
+        data.products.forEach((product) => {
+            const clone = template.content.cloneNode(true);
+            clone.querySelector(".title").textContent = product.title;
+            clone.querySelector(".description").textContent =
+                product.description;
+            clone.querySelector(
+                ".price"
+            ).textContent = `Price: $${product.price}`;
+            container.appendChild(clone);
+        });
+    } catch (err) {
+        console.log("ERROR OCCURRED:", err.message);
+    }
 }
 
-fetchData();
+fetchProducts();

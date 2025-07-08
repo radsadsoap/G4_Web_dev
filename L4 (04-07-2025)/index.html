@@ -3,8 +3,35 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Product Cards</title>
+        <style>
+            #products-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+                gap: 1rem;
+            }
+
+            .card {
+                border: 1px solid #ccc;
+                padding: 1em;
+                margin: 0;
+                border-radius: 8px;
+            }
+        </style>
     </head>
-    <body>This is js</body>
-    <script src="script.js"></script>
+    <body>
+        <h1>Product List</h1>
+
+        <div id="products-container"></div>
+
+        <template id="product-template">
+            <div class="card">
+                <h2 class="title"></h2>
+                <p class="description"></p>
+                <p class="price"></p>
+            </div>
+        </template>
+
+        <script src="script.js"></script>
+    </body>
 </html>
