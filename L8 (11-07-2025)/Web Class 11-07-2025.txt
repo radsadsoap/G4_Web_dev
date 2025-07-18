@@ -1,0 +1,79 @@
+Web Class 11-07-2025
+
+
+version control
+- GitHub, Gitlab
+
+Change Set - controls version like v1.00 + description of that version (npm)
+           - 1.1.0 (major, minor, patch/bump respectively) 
+
+ecommerce - solution, architect / principle product engineer (makes boilerplate)
+folder structure
+
+modules, packages, services
+
+Project
+* Documentation
+* workflow or wireframes -> lucide chart, draw.io, sketchers
+* ER - Diagram for database
+* boilerplate ready phase - folder, file structures, logic, server setup
+
+Collaborations
+
+t1 [Leader]
+t2 
+t3
+t4
+* make repository
+optional: make organisation over GitHub
+
+Description 
+* issues
+* poc, bugs
+
+pull request
+main --> branch -> feat / ai-chat-integration
+		-> bug / cart-addclick
+		-> fix / product-page
+		-> chores / package-fix
+
+
+main code base ---> feat / cart functionalities
+
+rule set 
+* pr on creation
+code merge not allowed
+1 at least approvals
+
+merge conflit
+fetch 
+pull
+
+token.npmrc = GitHub oathtoken or any other token like .env ${token}
+
+commit -> local git
+commt and pust -> remote git
+
+* pull request is reversible
+
+Code Quality
+React . TSX
+npm run node - for testing
+
+yarn run tsc - for tsx into jsx
+
+repo	-> main
+	-> .GitHub/workflows or .yaml
+
+* GitHub action documnetaion for CI and workflows
+
+SonarQube - Code quality
+
+Testing tools - cucumber
+Continuous Delivery - ArgoCD (open-source)
+testing phase - UAT setup (works in pods)
+	      - SAT
+	      - client testing
+	      - main deployment
+
+React testing, backend testing 
